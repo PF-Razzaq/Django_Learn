@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+
+<p>My Name is <b>{{ first_name }} {{ last_name }}.</b></p>
+<p>And I'm a <b>{{ skill }}.</b></p>
+<p>My Qualification is <b>{{ qualification }}</b> in Computer Science.</p>
+
+<h3>Capital of Pakistan is: {{ capital.pakistan }}</h3>
+<h3>Capital of Afghanistan is: {{ capital.Afghanistan }}</h3>
+<h3>Capital of UAE is: {{ capital.UAE }}</h3>
+
+<h2>
+  {% for item in list %}
+  <span>{{ item }}</span>
+  {% endfor %}
+</h2>
+
+<a href="{% url 'firstApp:example' %}">Demo Page</a>
+
+{% endblock content %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<p>This is the Demo Content of this page</p>
+<a href="{% url 'firstApp:index' %}">Index Page</a>
+<img
+  src="{% static 'my_app/razzaq.jpg' %}"
+  alt="My Img"
+  style="width: 200px; height: 200px; object-fit: cover"
+/>
+{% endblock content %}
