@@ -1,1 +1,47 @@
-{% extends 'base.html' %} {% block content %} Add.html {% endblock content %}
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-5">
+  <h2>Contact Form</h2>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="brand" class="form-label">Brand:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brand"
+        name="brand"
+        placeholder="Enter brand"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="year" class="form-label">Year:</label>
+      <input
+        type="number"
+        class="form-control appearance-none"
+        id="year"
+        name="year"
+        placeholder="Enter year"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="amount" class="form-label">Amount:</label>
+      <input
+        type="number"
+        class="form-control appearance-none"
+        id="amount"
+        name="amount"
+        placeholder="Enter amount"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock content %}
