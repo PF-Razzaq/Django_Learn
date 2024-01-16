@@ -6,9 +6,10 @@
     <title>Rental Review</title>
   </head>
   <body>
-    <h1>Rental Review</h1>
-    {% comment %}
-    <form action="" method="POST">{% csrf_token %}</form>
-    {% endcomment %}
+    <h1>Rental Review Form</h1>
+    <form action="" method="POST">
+      {% csrf_token %} {{ form }}
+      <input type="submit" value="Submit Query" />
+    </form>
   </body>
 </html>

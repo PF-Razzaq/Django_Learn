@@ -1,4 +1,370 @@
-{
+// 1
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matleftHandVergeCost = (
+      obj.job.matleftHandVergeActReq *
+      tilesData.filter((a) => a.tileId === obj.job.tileId)[0].leftHandedTileCost
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matleftHandVergeActReq]);
+// 2
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matslateCost = (
+      obj.job.matSlateActReq *
+      tilesData.filter((a) => a.tileId === obj.job.tileId)[0].costPerTile
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matSlateActReq]);
+// 3
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.mateaveFeltCost = (
+      obj.job.mateaveFeltActReq *
+      materialRates.filter((a) => a.materialName === "Eave Felt")[0].costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.mateaveFeltActReq]);
+// 4
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.eaveCombFillerCost = (
+      materialRates.filter((a) => a.materialName === "Eave Comb Filler")[0]
+        .costPerUnit * formData.job.eaveCombFillerActReq
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.eaveCombFillerActReq]);
+// 5
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matroofingMembraneCost = (
+      obj.job.matroofingMembraneActReq *
+      materialRates.filter((a) => a.materialName === "Roofing Membrane")[0]
+        .costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matroofingMembraneActReq]);
+// 6
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matbattenCost = (
+      obj.job.matbattenActReq *
+      materialRates.filter(
+        (a) => a.materialName === "25 x 50mm Batten (big & slate)"
+      )[0].costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matbattenActReq]);
+// 7
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matbattenNailsCost = (
+      obj.job.matbattenNailsActReq *
+      materialRates.filter((a) => a.materialName === "Batten ils")[0]
+        .costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matbattenNailsActReq]);
+// 8
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matslateTileNailsCost = Number(
+      nailsmm.filter((a) => a.nailSize == mmmValue.replace("mm", ""))[0]
+        .costPerUnit * Number(obj.job.matslateTileNailsActReq)
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matslateTileNailsActReq]);
+// 9
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matleadFlashingsCost = (
+      materialRates.filter((a) => a.materialName === "Lead Flashings")[0]
+        .costPerUnit * obj.job.matleadFlashingsActReq
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matleadFlashingsActReq]);
+// 10
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matleadValleysCost = (
+      materialRates.filter((a) => a.materialName === "Lead Valleys")[0]
+        .costPerUnit * obj.job.matleadValleysActReq
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matleadValleysActReq]);
+// 11
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matdryValleyCost = Number(
+      materialRates.filter((a) => a.materialName === "GRP Valley Tray")[0]
+        .costPerUnit * obj.job.matdryValleyActReq
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matdryValleyActReq]);
+// 12
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matridgeCost = (
+      obj.job.matridgeMaterialActReq *
+      materialRates.filter((a) => a.materialName === "Concrete Ridge")[0]
+        .costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matridgeMaterialActReq]);
+// 13
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.mathipsCost = (
+      obj.job.mathipsMaterialActReq *
+      materialRates.filter((a) => a.materialName === "Concrete Ridge")[0]
+        .costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.mathipsMaterialActReq]);
+// 14
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matsandCost = (
+      obj.job.matsandActReq *
+      materialRates.filter((a) => a.materialName === "Sand")[0].costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matsandActReq]);
+// 15
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matcementCost = (
+      obj.job.matcementActReq *
+      materialRates.filter((a) => a.materialName === "Cement")[0].costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matcementActReq]);
+// 16
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matSealantsCost = (
+      obj.job.matSealantsActReq *
+      materialRates.filter((a) => a.materialName === "Sealants")[0].costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matSealantsActReq]);
+// 17
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matdryRidgeKitCost = (
+      obj.job.matdryRidgeKitActReq *
+      materialRates.filter((a) => a.materialName === "Dry Ridge Kit")[0]
+        .costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matdryRidgeKitActReq]);
+// 18
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matHipSupportTraysCost = (
+      obj.job.matHipSupportTraysActReq *
+      materialRates.filter((a) => a.materialName === "HIP Supoort Tray")[0]
+        .costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matHipSupportTraysActReq]);
+// 19
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matUnderCloakCost = (
+      obj.job.matUnderCloakActReq *
+      materialRates.filter(
+        (a) => a.materialName === "Cement Fibre Under Cloak"
+      )[0].costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matUnderCloakActReq]);
+// 20
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matventTilescostCost = (
+      obj.job.matventTilesMaterialActReq *
+      materialRates.filter((a) => a.materialName === "Vent Tile")[0].costPerUnit
+    ).toFixed(2);
+
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matventTilesMaterialActReq]);
+// 21
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matleadSlatecost = (
+      obj.job.matleadslateActReq *
+      materialRates.filter((a) => a.materialName === "Lead Saddle")[0]
+        .costPerUnit
+    ).toFixed(2);
+
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matleadslateActReq]);
+// 22
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matboxGutterLeadCost = (
+      obj.job.matboxGutterLeadActReq *
+      materialRates.filter((a) => a.materialName == "Box Gutter Lead")[0]
+        .costPerUnit
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matboxGutterLeadActReq]);
+// 23
+useEffect(() => {
+  if (calculatedOnce == true && formData.job.tileTypeId == 3) {
+    const obj = { ...formData };
+    obj.job.matdryVergeCost = (
+      Number(obj.job.matdryVergeActReq) *
+      Number(
+        materialRates.filter(
+          (a) => a.materialName === "Dry Verge Unit (Tile Only)"
+        )[0].costPerUnit
+      )
+    ).toFixed(2);
+    obj.job.materialCost = materialCosttileTypeId3(obj);
+    obj.job.totalCost = (
+      Number(obj.job.materialCost) + parseFloat(obj.job.labourCost)
+    ).toFixed(2);
+    setFormData(obj);
+  }
+}, [formData.job.matdryVergeActReq]);
+
+return(
+  <>
+  {
   formData.job.tileTypeId == 3 && (
     <table id="datatablesSimple">
       <thead>
@@ -534,3 +900,6 @@
     </table>
   );
 }
+
+  </>
+)

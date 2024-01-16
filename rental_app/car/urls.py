@@ -5,5 +5,5 @@ app_name = 'car'
 
 urlpatterns = [
     path('thank_you/',views.thank_you,name='thank_you'),
-    path('rental_review/',views.rental_review,name='rental_review')
+    path('',views.rental_review,name='rental_review')
 ]

@@ -1,3 +1,8 @@
+<tr>
+  <td>Box Gutter Lead</td>
+
+  <td>£ {formData.job.matboxGutterLeadCost}</td>
+</tr>;
 {
   formData.job.tileTypeId == 3 && (
     <table id="datatablesSimple">
@@ -25,13 +30,27 @@
                 if (dotCount > 1) {
                   return;
                 }
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
+                setFormData(obj);
+              }}
+            />
+          </td>
+          <td>
+            <input
+              className="qouteInputs"
+              value={formData.job.matSlateActReq}
+              onChange={(e) => {
+                const obj = { ...formData };
+                const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
+                const dotCount = sanitizedValue.split(".").length - 1;
+                if (dotCount > 1) {
+                  return;
+                }
                 obj.job.matSlateActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-
-         
           <td>£ {formData.job.matslateCost}</td>
         </tr>
         <tr>
@@ -40,7 +59,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matleftHandVergeActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -48,12 +67,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matleftHandVergeActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matleftHandVergeActReq}</td>
           <td>£ {formData.job.matleftHandVergeCost}</td>
         </tr>
         <tr>
@@ -62,7 +81,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.mateaveFeltActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -70,12 +89,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.mateaveFeltActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.mateaveFeltActReq}</td>
           <td>£ {formData.job.mateaveFeltCost}</td>
         </tr>
         <tr>
@@ -84,7 +103,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.eaveCombFillerActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -92,12 +111,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.eaveCombFillerActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.eaveCombFillerActReq}</td>
           <td>£ {formData.job.eaveCombFillerCost}</td>
         </tr>
         <tr>
@@ -106,7 +125,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matroofingMembraneActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -114,12 +133,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matroofingMembraneActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matroofingMembraneActReq}</td>
           <td>£ {formData.job.matroofingMembraneCost}</td>
         </tr>
         <tr>
@@ -128,7 +147,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matbattenActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -136,12 +155,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matbattenActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matbattenActReq}</td>
           <td>£ {formData.job.matbattenCost}</td>
         </tr>
         <tr>
@@ -150,7 +169,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matbattenNailsActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -158,12 +177,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matbattenNailsActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matbattenNailsActReq}</td>
           <td>£ {formData.job.matbattenNailsCost}</td>
         </tr>
         <tr>
@@ -172,7 +191,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matslateTileNailsActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -180,12 +199,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matslateTileNailsActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matslateTileNailsActReq}</td>
           <td>£ {formData.job.matslateTileNailsCost}</td>
         </tr>
         <tr>
@@ -194,7 +213,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matleadFlashingsActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -202,12 +221,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matleadFlashingsActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matleadFlashingsActReq}</td>
           <td>£ {formData.job.matleadFlashingsCost}</td>
         </tr>
         <tr>
@@ -216,7 +235,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matleadValleysActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -224,12 +243,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matleadValleysActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-          <td> {formData.job.}</td>
+          <td> {formData.job.matleadValleysActReq}</td>
           <td>£ {formData.job.matleadValleysCost}</td>
         </tr>
         <tr>
@@ -238,7 +257,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matdryValleyActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -246,12 +265,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matdryValleyActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matdryValleyActReq}</td>
           <td>£ {formData.job.matdryValleyCost}</td>
         </tr>
         <tr>
@@ -260,7 +279,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matridgeMaterialActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -268,12 +287,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matridgeMaterialActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matridgeMaterialActReq}</td>
           <td>£ {formData.job.matridgeCost}</td>
         </tr>
         <tr>
@@ -282,7 +301,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.mathipsMaterialActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -290,12 +309,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.mathipsMaterialActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.mathipsMaterialActReq}</td>
           <td>£ {Number(formData.job.mathipsCost).toFixed(2)}</td>
         </tr>
         <tr>
@@ -304,7 +323,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matsandActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -312,12 +331,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matsandActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matsandActReq}</td>
           <td>£ {formData.job.matsandCost}</td>
         </tr>
         <tr>
@@ -326,7 +345,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matcementActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -334,12 +353,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matcementActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matcementActReq}</td>
           <td>£ {formData.job.matcementCost}</td>
         </tr>
         <tr>
@@ -348,7 +367,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matSealantsActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -356,12 +375,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matSealantsActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matSealantsActReq}</td>
           <td>£ {formData.job.matSealantsCost}</td>
         </tr>
         <tr>
@@ -370,7 +389,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matdryRidgeKitActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -378,12 +397,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matdryRidgeKitActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matdryRidgeKitActReq}</td>
           <td>£ {formData.job.matdryRidgeKitCost}</td>
         </tr>
         <tr>
@@ -392,7 +411,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matHipSupportTraysActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -400,12 +419,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matHipSupportTraysActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matHipSupportTraysActReq}</td>
           <td>£ {formData.job.matHipSupportTraysCost}</td>
         </tr>
         <tr>
@@ -414,7 +433,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matUnderCloakActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -422,12 +441,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matUnderCloakActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matUnderCloakActReq}</td>
           <td>£ {formData.job.matUnderCloakCost}</td>
         </tr>
         <tr>
@@ -436,7 +455,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matdryVergeActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -444,12 +463,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matdryVergeActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matdryVergeActReq}</td>
           <td>£ {formData.job.matdryVergeCost}</td>
         </tr>
         <tr>
@@ -458,7 +477,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matventTilesMaterialActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -466,12 +485,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matventTilesMaterialActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matventTilesMaterialActReq}</td>
           <td>£ {formData.job.matventTilescostCost}</td>
         </tr>
         <tr>
@@ -480,7 +499,7 @@
           <td>
             <input
               className="qouteInputs"
-              value={formData.job.matleadSlateMaterialActReq}
+              value={formData.job.matboxGutterLeadActReq}
               onChange={(e) => {
                 const obj = { ...formData };
                 const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
@@ -488,12 +507,12 @@
                 if (dotCount > 1) {
                   return;
                 }
-                obj.job.matleadSlateMaterialActReq = Number(sanitizedValue);
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
                 setFormData(obj);
               }}
             />
           </td>
-         
+          <td>{formData.job.matleadSlateMaterialActReq}</td>
           <td>£ {formData.job.matleadSlatecost}</td>
         </tr>
 
@@ -516,7 +535,7 @@
               }}
             />
           </td>
-         
+          <td>{formData.job.matboxGutterLeadActReq}</td>
           <td>£ {formData.job.matboxGutterLeadCost}</td>
         </tr>
 
@@ -525,9 +544,39 @@
             <strong>Material Cost</strong>
           </td>
           <td></td>
-
+          <td>
+            <input
+              className="qouteInputs"
+              value={formData.job.matboxGutterLeadActReq}
+              onChange={(e) => {
+                const obj = { ...formData };
+                const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
+                const dotCount = sanitizedValue.split(".").length - 1;
+                if (dotCount > 1) {
+                  return;
+                }
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
+                setFormData(obj);
+              }}
+            />
+          </td>
           <td></td>
-
+          <td>
+            <input
+              className="qouteInputs"
+              value={formData.job.matboxGutterLeadActReq}
+              onChange={(e) => {
+                const obj = { ...formData };
+                const sanitizedValue = e.target.value.replace(/[^0-9.]/g, "");
+                const dotCount = sanitizedValue.split(".").length - 1;
+                if (dotCount > 1) {
+                  return;
+                }
+                obj.job.matboxGutterLeadActReq = Number(sanitizedValue);
+                setFormData(obj);
+              }}
+            />
+          </td>
           <td>£ {formData.job.materialCost}</td>
         </tr>
       </tbody>

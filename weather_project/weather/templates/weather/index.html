@@ -1,5 +1,4 @@
 <!-- weather/templates/weather/index.html -->
-{% load some_tags_or_filters_library %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,18 +42,6 @@
 
           <form method="post" action="{% url 'get_weather' %}" class="mb-4">
             {% csrf_token %}
-
-            <div class="mb-3">
-              <label for="city" class="form-label">City:</label>
-              <input type="text" name="city" class="form-control" required />
-            </div>
-
-            {% comment %}
-            <div class="mb-3">
-              <label for="country" class="form-label">Country:</label>
-              <input type="text" name="country" class="form-control" required />
-            </div>
-            {% endcomment %}
             <div class="mb-3">
               <label for="country" class="form-label">Country:</label>
               <select name="country">
@@ -72,22 +59,14 @@
               <select name="city">
                 <option value="" disabled selected>Choose a City</option>
 
-                {% for country in cities %} {% for city in
-                country[country.keys.0] %}
-                <option value="{{ city }}">{{ city }}</option>
-                {% endfor %} {% endfor %}
-              </select>
-
-              {% comment %}
-              <select>
-                {% for city_name, city_data in cities.items %}
-                <option value="{{ city_name }}">
-                  {% for value in city_data.0 reversed %} {{ value }} {% endfor
-                  %}
-                </option>
+                {% for country, country_cities in cities.items %}
+                <span>
+                  {% for city in country_cities %}
+                  <option value="{{ city }}">{{ city }}</option>
+                  {% endfor %}
+                </span>
                 {% endfor %}
               </select>
-              {% endcomment %}
             </div>
 
             <button type="submit" class="btn btn-primary">Get Weather</button>
