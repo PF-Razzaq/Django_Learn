@@ -1,4 +1,5 @@
 <!-- weather/templates/weather/weather.html -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,22 +14,122 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
           <h1 class="text-center mb-4">Weather Information</h1>
+          <i class="bi bi-heart"></i>
 
           <p>City: {{ weather_data.name }}</p>
           <p>Temperature: {{ weather_data.main.temp|floatformat:2 }}°C</p>
           <p>Weather: {{ weather_data.weather.0.description }}</p>
           <p>Wind Speed: {{ weather_data.wind.speed|floatformat:2 }} m/s</p>
+
+          {% if 'smoke' in weather_data.weather.0.description.lower %}
+          <h1>Smoke Weather</h1>
+          <img src="{% static 'img/smoke.png' %}" alt="Smoke Image" />
+          {% elif 'cloud' in weather_data.weather.0.description.lower %}
+          <h1>Cloud Weather</h1>
+
+          <img src="{% static 'img/clear-sky.png' %}" alt="Smoke Image" />
+          {% elif 'clear' in weather_data.weather.0.description.lower %}
+          <h1>Clear Weather</h1>
+
+          <img src="{% static 'img/sun.png' %}" alt="Smoke Image" />
+          {% elif 'haze' in weather_data.weather.0.description.lower %}
+          <h1>Haze Weather</h1>
+
+          <img src="{% static 'img/haze.png' %}" alt="Smoke Image" />
+
+          {% elif 'rain' in weather_data.weather.0.description.lower %}
+          <h1>Rain Weather</h1>
+
+          <img src="{% static 'img/rainy.png' %}" alt="Smoke Image" />
+
+          {% elif 'thunder' in weather_data.weather.0.description.lower %}
+          <h1>Thunder Weather</h1>
+
+          <img src="{% static 'img/storm.png' %}" alt="Smoke Image" />
+
+          {% elif 'fog' in weather_data.weather.0.description.lower %}
+          <h1>Fog Weather</h1>
+
+          <img src="{% static 'img/storm.png' %}" alt="Smoke Image" />
+          {% elif 'snowy' in weather_data.weather.0.description.lower %}
+          <h1>Snowy Weather</h1>
+
+          <img src="{% static 'img/snowfall.png' %}" alt="Smoke Image" />
+          {% elif 'sleet' in weather_data.weather.0.description.lower %}
+          <h1>Sleet Weather</h1>
+
+          <img src="{% static 'img/sleet.png' %}" alt="Smoke Image" />
+          {% elif 'tornado' in weather_data.weather.0.description.lower %}
+          <h1>Tornado Weather</h1>
+
+          <img src="{% static 'img/hurricane.png' %}" alt="Smoke Image" />
+          {% elif 'blizzard' in weather_data.weather.0.description.lower %}
+          <h1>Blizzard Weather</h1>
+
+          <img src="{% static 'img/blizzard.png' %}" alt="Smoke Image" />
+          {% elif 'dust-storm:' in weather_data.weather.0.description.lower %}
+          <h1>Dust Storm Weather</h1>
+
+          <img src="{% static 'img/sandstorm.png' %}" alt="Smoke Image" />
+          {% elif 'mist' in weather_data.weather.0.description.lower %}
+          <h1>Mist Weather</h1>
+
+          <img src="{% static 'img/mist.png' %}" alt="Smoke Image" />
+          {% elif 'freezing-rain' in weather_data.weather.0.description.lower %}
+          <h1>Freezing Rain Weather</h1>
+
+          <img src="{% static 'img/freezing-rain.png' %}" alt="Smoke Image" />
+          {% elif 'drizzle' in weather_data.weather.0.description.lower %}
+          <h1>Drizzle Weather</h1>
+
+          <img src="{% static 'img/drizzle.png' %}" alt="Smoke Image" />
+          {% elif 'showers' in weather_data.weather.0.description.lower %}
+          <h1>Showers Weather</h1>
+
+          <img src="{% static 'img/shower.png' %}" alt="Smoke Image" />
+          {% elif 'sunshower' in weather_data.weather.0.description.lower %}
+          <h1>Sunshower Weather</h1>
+
+          <img src="{% static 'img/drizzle.png' %}" alt="Smoke Image" />
+
+          {% elif 'hail' in weather_data.weather.0.description.lower %}
+          <h1>Hail Weather</h1>
+
+          <img src="{% static 'img/hail.png' %}" alt="Smoke Image" />
+
+          {% else %}
+          <p>No specific image for this weather condition</p>
+          {% endif %}
         </div>
       </div>
     </div>
 
     <!-- Include Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-eUHJQdyFStj8bGByOn13AwbO5A0I/s2t1c3U3EHzD4KZ4l5q+ECqBS9H12bN/Njp"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
